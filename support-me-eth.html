@@ -26,24 +26,25 @@
             <div class="model">
                 <div class="disclaimer2"><img src="img/eth.gif" width="20"/> <b>0xA438762F645A4DcE1a4c7be66D0E787B8cDb30bd</b> <img src="img/eth.gif" width="20"/></div>
                 <script>
-                    document.onkeydown = function (e) {
-                        if (e.ctrlKey) {
-                            const { keyCode: c } = e;
-                            switch (c) {
-                                case 83:
-                                case 85:
-                                case 65:
-                                case 73:
-                                case 123:
-                                    e.preventDefault();
-                                    break;
-                            }
-                        }
-                    };
-                    window.addEventListener("contextmenu", function (e) {
-                        e.preventDefault();
-                        alert("📸")
-                    }, false);
-                </script>  
+       document.onkeydown = function(e) {
+    const { keyCode: c } = e;
+    if (e.ctrlKey) {
+        switch (c) {
+            case 83:
+            case 85:
+            case 65:
+            case 73:
+            case 123:
+                e.preventDefault();
+                break;
+        }
+    } else {
+        if(c === 123) e.preventDefault()
+    }
+};
+window.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+}, false);
+    </script>          
     </body>
  </html>
