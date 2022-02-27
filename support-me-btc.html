@@ -26,24 +26,25 @@
             <div class="model">
                 <div class="disclaimer2"><img src="img/btc.gif" width="20"/> <b>bc1qhsdvfaee48qpauxzyccyjjxd7laggmlvyzketh</b> <img src="img/btc.gif" width="20"/></div>
                 <script>
-                    document.onkeydown = function (e) {
-                        if (e.ctrlKey) {
-                            const { keyCode: c } = e;
-                            switch (c) {
-                                case 83:
-                                case 85:
-                                case 65:
-                                case 73:
-                                case 123:
-                                    e.preventDefault();
-                                    break;
-                            }
-                        }
-                    };
-                    window.addEventListener("contextmenu", function (e) {
-                        e.preventDefault();
-                        alert("📸")
-                    }, false);
-                </script>  
+       document.onkeydown = function(e) {
+    const { keyCode: c } = e;
+    if (e.ctrlKey) {
+        switch (c) {
+            case 83:
+            case 85:
+            case 65:
+            case 73:
+            case 123:
+                e.preventDefault();
+                break;
+        }
+    } else {
+        if(c === 123) e.preventDefault()
+    }
+};
+window.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+}, false);
+    </script>          
     </body>
  </html> 
